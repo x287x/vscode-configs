@@ -1,0 +1,215 @@
+{
+	"files.autoSave": "afterDelay",
+	"tabnine.experimentalAutoImports": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"extensions.localExtensionDevelopment": false,
+	"emmet.showSuggestionsAsSnippets": true,
+	"emmet.useInlineCompletions": true,
+	"emmet.triggerExpansionOnTab": true,
+	"html-css-class-completion.enableEmmetSupport": true,
+	"editor.formatOnSave": true,
+	"indentRainbow.excludedLanguages": ["plaintext", "css"],
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.tabWidth": 2,
+	"prettier.useTabs": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"liveServer.settings.donotShowInfoMsg": true,
+	"liveServer.settings.donotVerifyTags": true,
+	"json.schemas": [],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"cSpell.userWords": ["desaturated", "scroller", "vimtutor"],
+	"cSpell.languageSettings": [],
+	"cSpell.language": "en,ar",
+	"editor.tabSize": 2,
+	"markdownlint.ignore": [],
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	},
+	"terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+	"editor.indentSize": 2,
+	"editor.lineNumbers": "relative",
+	"editor.minimap.enabled": false,
+	"breadcrumbs.enabled": false,
+
+	// scrolloff
+	"editor.cursorSurroundingLines": 8,
+	// VIM
+
+	"vim.leader": "<Space>",
+	"vim.hlsearch": false,
+	"vim.incsearch": true,
+	"vim.smartcase": true,
+
+	"vim.normalModeKeyBindingsNonRecursive": [
+		// NAVIGATION
+		// switch b/w buffers
+		{ "before": ["<S-h>"], "commands": [":bprevious"] },
+		{ "before": ["<S-l>"], "commands": [":bnext"] },
+
+		// splits
+		// { "before": ["leader", "v"], "commands": [":vsplit"] },
+		// this conflicts with the refactoring mapping further down
+		// so I opted to use the default <C-w>s and <C-w>v
+		// you could choose either one
+		// { "before": ["leader", "s"], "commands": [":split"] },
+
+		// panes
+		{
+			"before": ["leader", "h"],
+			"commands": ["workbench.action.focusLeftGroup"]
+		},
+		{
+			"before": ["leader", "j"],
+			"commands": ["workbench.action.focusBelowGroup"]
+		},
+		{
+			"before": ["leader", "k"],
+			"commands": ["workbench.action.focusAboveGroup"]
+		},
+		{
+			"before": ["leader", "l"],
+			"commands": ["workbench.action.focusRightGroup"]
+		},
+		// NICE TO HAVE
+		{ "before": ["leader", "w"], "commands": [":w!"] },
+		{ "before": ["leader", "q"], "commands": [":q!"] },
+		{ "before": ["leader", "x"], "commands": [":x!"] },
+		// {
+		//   "before": ["[", "d"],
+		//   "commands": ["editor.action.marker.prev"]
+		// },
+		// {
+		//   "before": ["]", "d"],
+		//   "commands": ["editor.action.marker.next"]
+		// },
+
+		//quick fix
+		{
+			"before": ["<leader>", "c", "a"],
+			"commands": ["editor.action.quickFix"]
+		},
+		// fuzzy finder
+		{ "before": ["<leader>", "o"], "commands": ["workbench.action.quickOpen"] },
+		// format document
+		{
+			"before": ["<leader>", "f"],
+			"commands": ["editor.action.formatDocument"]
+		},
+		{
+			"before": ["g", "h"],
+			"commands": ["editor.action.showDefinitionPreviewHover"]
+		},
+		// Keep cursor in the center
+		{
+			"before": ["<C-d>"],
+			"after": ["<C-d>", "z", "z"]
+		},
+		{
+			"before": ["<C-u>"],
+			"after": ["<C-u>", "z", "z"]
+		},
+		{
+			"before": ["n"],
+			"after": ["n", "z", "z", "z", "v"]
+		},
+		{
+			"before": ["N"],
+			"after": ["N", "z", "z", "z", "v"]
+		},
+		{
+			"before": ["<leader>", "y"],
+			"after": ["\"", "+", "y"]
+		},
+		{
+			"before": ["<leader>", "Y"],
+			"after": ["\"", "+", "Y"]
+		},
+		{
+			"before": ["<leader>", "p"],
+			"after": ["\"", "+", "p"]
+		},
+		{
+			"before": ["<leader>", "d"],
+			"after": ["\"", "_", "d"]
+		},
+		{
+			"before": ["<leader>", "s"],
+			"after": [
+				":",
+				"%",
+				"s",
+				"/",
+				"\\",
+				"<",
+				"<C-r>",
+				"<C-w>",
+				"\\",
+				">",
+				"/",
+				"<C-r>",
+				"<C-w>",
+				"/",
+				"g",
+				"I",
+				"<Left>",
+				"<Left>",
+				"<Left>"
+			]
+		},
+		// toggle comment selection
+		{ "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+	],
+	"vim.visualModeKeyBindings": [
+		// Stay in visual mode while indenting
+		{ "before": ["<"], "commands": ["editor.action.outdentLines"] },
+		{ "before": [">"], "commands": ["editor.action.indentLines"] },
+
+		// Move selected lines while staying in visual mode
+		{ "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+		{ "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+
+		// toggle comment selection
+		{ "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		// paste on top of a selection without losing what's in your buffer
+		// " tells vim to use the following buffer
+		// _ is the black hole buffer in vim
+		// d delete command
+		// "_d tells vim to delete the selection into the black hole buffer
+		// P paste at the before the cursor
+		{
+			"before": ["<leader>", "p"],
+			"after": ["\"", "_", "d", "P"]
+		},
+		{
+			"before": ["<leader>", "y"],
+			"after": ["\"", "+", "y"]
+		},
+		{
+			"before": ["<leader>", "d"],
+			"after": ["\"", "_", "d"]
+		}
+	],
+	"window.zoomLevel": 1,
+	"[jsonc]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[ignore]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	}
+}
