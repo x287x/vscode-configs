@@ -18,7 +18,7 @@
 	"prettier.tabWidth": 2,
 	"prettier.useTabs": true,
 	"[javascript]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
 	},
 	"liveServer.settings.donotShowInfoMsg": true,
 	"liveServer.settings.donotVerifyTags": true,
@@ -207,9 +207,11 @@
 	],
 	"window.zoomLevel": 1,
 	"[jsonc]": {
-		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[ignore]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
-	}
+	},
+	"hediet.vscode-drawio.resizeImages": null,
+	"git.openRepositoryInParentFolders": "never"
 }
